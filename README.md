@@ -1,0 +1,2 @@
+# impiccato
+Hangman in C++
