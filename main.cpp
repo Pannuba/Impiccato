@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <ctime>
+#include <conio.h>
 #include "Gioco.h"
 #include "Parole.h"
 using namespace std;
@@ -14,9 +15,9 @@ int main(){
 	#endif
 	
 	cout << "PannImpiccato";
-	string input, parola, spazi;
+	string input, parola, spazi, letteremesse = "";
 	bool gioca = true;
-	unsigned int vite, i;
+	unsigned int vite = 10, i;
 	signed int count = -1;
 	char scelta, lettera;
 	Gioco gioco;
@@ -24,33 +25,30 @@ int main(){
 	while (gioca == true)
 	
 	{
-		vite = 10;
 		parola = getParola(parola);
+		cout << "\n\n" << parola << "\n\n";
 		
 		for (i = 0; i < parola.length(); i++)
-			spazi += '_';
+			spazi += '*';
 		
 		while (vite != 0)
 		
 		{
-			cin.sync();
 			cout << "\n\nInserisci una lettera (1) o indovina la parola! (2)\t\t(vite: " << vite << ") ";
-			scelta = cin.get();
+			scelta = _getch();
 			
 			while (scelta != '1' && scelta != '2')
 			
 			{
-				cerr << "\nInserisci 1 o 2: ";
-				cin.sync();
-				scelta = cin.get();
+				cerr << "\n\nInserisci 1 o 2: ";
+				scelta = _getch();
 			}
 			
 			if (scelta == '1')
 			
 			{
 				cout << "\n\nInserisci una lettera: ";
-				cin.sync();
-				lettera = cin.get();
+				lettera = _getch();
 				count = -1;
 				
 				for (i = 0; i < parola.length(); i++)
@@ -68,7 +66,7 @@ int main(){
 					
 				}
 				
-				if (count != -1)				/* Elefante - lettera f: ___f____ */
+				if (count != -1)
 				
 				{
 					if (count >= 2)
@@ -90,13 +88,19 @@ int main(){
 				
 				else
 					vite = gioco.sbagliato(vite);
-					
-				if (spazi.find('_') == string::npos)
 				
-				{
-					cout << "\n\nComplimenti!";		/* Quando dico "si" dice che vinco quando perdo...? */
+				letteremesse += lettera;
+				
+				cout << "Lettere inserite: ";
+				
+				for (i = 0; i < letteremesse.length(); i++)
+					cout << letteremesse[i] << ", ";
+					
+				if (vite == 0)
 					gioco.giocareAncora(&vite, &gioca);
-				}
+					
+				if (spazi.find('*') == string::npos)
+					gioco.giocareAncora(&vite, &gioca);
 				
 			}
 			
@@ -104,16 +108,10 @@ int main(){
 			
 			{
 				cout << "\n\nTenta una parola, e inserisci la fortuna! ";
-				cin.sync();
 				getline(cin, input);
 				
 				if (input == parola)
-			
-				{
-					cout << "\n\nEsatto!";
 					gioco.giocareAncora(&vite, &gioca);
-				}
-				
 				else
 				
 				{

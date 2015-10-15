@@ -4,7 +4,8 @@ using namespace std;
 unsigned int Gioco::sbagliato(unsigned int vite)
 
 {
-	cout << "\nSbagliato! Hai perso una vita :D\n\n";
+	system("cls");
+	cout << "Sbagliato! Hai perso una vita :D\n\n";
 	vite--;
 		
 	switch (vite)
@@ -58,6 +59,12 @@ unsigned int Gioco::sbagliato(unsigned int vite)
 void Gioco::giocareAncora(unsigned int *vite, bool *gioca)
 
 {
+	if (*vite == 0)
+		cout << "\n\nHai perso! La parola era \"parola\".";
+	
+	else
+		cout << "\n\nHai vinto!";
+		
 	cout << "\n\nVuoi giocare ancora? ";
 	cin >> giocare;
 	
@@ -67,5 +74,8 @@ void Gioco::giocareAncora(unsigned int *vite, bool *gioca)
 		*vite = 0;		/* *vite, *gioca perchè se non metto '*' cambio il valore al puntatore, non alla variabile */
 		*gioca = false;
 	}
+	
+	else
+		*vite = 10;
 	
 }
