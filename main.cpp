@@ -24,6 +24,7 @@ int main(){
 	while (gioca == true)
 	
 	{
+		vite = 10; spazi = ""; letteremesse = "";
 		parola = getParola(parola);
 		
 		for (i = 0; i < parola.length(); i++)

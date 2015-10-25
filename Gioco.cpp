@@ -76,6 +76,6 @@ void Gioco::giocareAncora(unsigned int *vite, bool *gioca)
 	}
 	
 	else
-		*vite = 10;
+		*vite = 0;
 	
 }
