@@ -1,4 +1,5 @@
 #include "Parole.h"
+
 using namespace std;
 
 string getParola(std::string parola)

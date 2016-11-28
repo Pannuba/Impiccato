@@ -7,7 +7,7 @@ class Omino
 
 {
 	protected:
-		void frame();
+		void frame0();
 		void frame1();
 		void frame2();
 		void frame3();

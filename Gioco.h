@@ -8,7 +8,7 @@ class Gioco : protected Omino
 {
 	public:
 		unsigned int sbagliato(unsigned int vite);
-		void giocareAncora(unsigned int *vite, bool *gioca);
+		void giocareAncora(unsigned int *vite, bool *gioca, std::string *parola);
 		
 	private:
 		std::string giocare;

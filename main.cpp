@@ -48,6 +48,7 @@ int main(){
 			{
 				cout << "\n\nInserisci una lettera: ";
 				lettera = _getch();
+				lettera = tolower(lettera);
 				count = -1;
 				
 				for (i = 0; i < parola.length(); i++)
@@ -84,16 +85,15 @@ int main(){
 							spazi.replace(i, 1, 1, lettera);
 					}
 					
-					cout << "\n\n" << spazi;
 				}
 				
 				else
 					vite = gioco.sbagliato(vite);
 				
+				cout << spazi;
 				letteremesse += lettera;
 				
 				cout << "\tLettere inserite: ";
-				
 				for (i = 0; i < letteremesse.length(); i++)
 				
 				{
@@ -105,7 +105,7 @@ int main(){
 				}
 					
 				if (vite == 0 || spazi.find('*') == string::npos)
-					gioco.giocareAncora(&vite, &gioca);
+					gioco.giocareAncora(&vite, &gioca, &parola);
 			}
 			
 			else if (scelta == '2')
@@ -114,15 +114,19 @@ int main(){
 				cout << "\n\nTenta una parola, e inserisci la fortuna! ";
 				getline(cin, input);
 				
+				for (i = 0; i < input.length(); i++)
+					input[i] = tolower(input[i]);
+				
 				if (input == parola)
-					gioco.giocareAncora(&vite, &gioca);
+					gioco.giocareAncora(&vite, &gioca, NULL);
+					
 				else
 				
 				{
 					vite = gioco.sbagliato(vite);
 					
 					if (vite == 0)
-						gioco.giocareAncora(&vite, &gioca);
+						gioco.giocareAncora(&vite, &gioca, &parola);
 				}
 					
 			}

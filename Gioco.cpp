@@ -1,4 +1,6 @@
 #include "Gioco.h"
+#include "Parole.h"
+
 using namespace std;
 
 unsigned int Gioco::sbagliato(unsigned int vite)
@@ -12,7 +14,7 @@ unsigned int Gioco::sbagliato(unsigned int vite)
 	
 	{
 		case 9:
-			Omino::frame();
+			Omino::frame0();
 			break;
 			
 		case 8:
@@ -49,18 +51,18 @@ unsigned int Gioco::sbagliato(unsigned int vite)
 			
 		case 0:
 			Omino::frame9();
-			cout << "\n\nHai perso!\t\tvite: 0\n";
+			//cout << "\n\nHai perso!\t\tvite: 0\n";
 			break;
 	}
 	
 	return vite;
 }
 
-void Gioco::giocareAncora(unsigned int *vite, bool *gioca)
+void Gioco::giocareAncora(unsigned int *vite, bool *gioca, string *parola)
 
 {
 	if (*vite == 0)
-		cout << "\n\nHai perso! La parola era \"parola\".";
+		cout << "\n\nHai perso! La parola era \"" << *parola << "\"";
 	
 	else
 		cout << "\n\nHai vinto!";

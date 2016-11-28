@@ -1,7 +1,7 @@
 #include "Omino.h"
 using namespace std;
 
-void Omino::frame()
+void Omino::frame0()
 
 {
 	cout << "                        \n";
@@ -14,7 +14,7 @@ void Omino::frame()
 	cout << "                        \n";
 	cout << "                        \n";
 	cout << "                        \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame1()
@@ -30,7 +30,7 @@ void Omino::frame1()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame2()
@@ -46,7 +46,7 @@ void Omino::frame2()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame3()
@@ -62,7 +62,7 @@ void Omino::frame3()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame4()
@@ -70,7 +70,7 @@ void Omino::frame4()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/                \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
@@ -78,7 +78,7 @@ void Omino::frame4()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame5()
@@ -86,7 +86,7 @@ void Omino::frame5()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/         |      \n";
 	cout << "      |          |      \n";
 	cout << "      |          |      \n";
@@ -94,7 +94,7 @@ void Omino::frame5()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame6()
@@ -102,7 +102,7 @@ void Omino::frame6()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/         |      \n";
 	cout << "      |         /|      \n";
 	cout << "      |        / |      \n";
@@ -110,7 +110,7 @@ void Omino::frame6()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame7()
@@ -118,7 +118,7 @@ void Omino::frame7()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/         |      \n";
 	cout << "      |         /|\\     \n";
 	cout << "      |        / | \\    \n";
@@ -126,7 +126,7 @@ void Omino::frame7()
 	cout << "      |                 \n";
 	cout << "      |                 \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame8()
@@ -134,7 +134,7 @@ void Omino::frame8()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/         |      \n";
 	cout << "      |         /|\\     \n";
 	cout << "      |        / | \\    \n";
@@ -142,7 +142,7 @@ void Omino::frame8()
 	cout << "      |         /       \n";
 	cout << "      |        /        \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
 
 void Omino::frame9()
@@ -150,7 +150,7 @@ void Omino::frame9()
 {
 	cout << "      +----------+      \n";
 	cout << "      |  /       |      \n";
-	cout << "      | /      (*v*)    \n";
+	cout << "      | /      (*o*)    \n";
 	cout << "      |/         |      \n";
 	cout << "      |         /|\\     \n";
 	cout << "      |        / | \\    \n";
@@ -158,5 +158,5 @@ void Omino::frame9()
 	cout << "      |         / \\     \n";
 	cout << "      |        /   \\    \n";
 	cout << "      |                 \n";
-	cout << "------+----------------- ";
+	cout << "------+-----------------\t";
 }
