@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <ctime>
-#include <conio.h>
 #include "Gioco.h"
 #include "Parole.h"
 using namespace std;
@@ -10,7 +9,10 @@ int main(){
 	srand((unsigned)time(0));
 	
 	#ifdef _WIN32			/* Se siamo su Windows (_WIN32 include _WIN64) */
+		#define CLEAR_SCREEN system("cls")
 		system("color a");
+	#elif __linux__
+		#define CLEAR_SCREEN system("clear")
 	#endif
 	
 	cout << "PannImpiccato";
@@ -34,20 +36,21 @@ int main(){
 		
 		{
 			cout << "\n\nInserisci una lettera (1) o indovina la parola! (2)\t\t(vite: " << vite << ") ";
-			scelta = _getch();
+			scelta = cin.get();
 			
 			while (scelta != '1' && scelta != '2')
 			
 			{
 				cerr << "\n\nInserisci 1 o 2: ";
-				scelta = _getch();
+				cin.ignore();
+				scelta = cin.get();
 			}
 			
 			if (scelta == '1')
 			
 			{
 				cout << "\n\nInserisci una lettera: ";
-				lettera = _getch();
+				lettera = cin.get();
 				lettera = tolower(lettera);
 				count = -1;
 				
@@ -69,7 +72,7 @@ int main(){
 				if (count != -1)
 				
 				{
-					system("cls");
+					CLEAR_SCREEN;
 					
 					if (count >= 2)
 						cout << "Esatto! La lettera e' presente " << count << " volte nella parola.\n\n";	/* Aggiungere metodo "Giusto"? */

@@ -2,11 +2,15 @@
 #include "Parole.h"
 
 using namespace std;
-
+	#ifdef _WIN32			/* Se siamo su Windows (_WIN32 include _WIN64) */
+		#define CLEAR_SCREEN system("cls")
+	#elif __linux__
+		#define CLEAR_SCREEN system("clear") //--mettere solo in giuoco.h
+	#endif
 unsigned int Gioco::sbagliato(unsigned int vite)
 
 {
-	system("cls");
+	CLEAR_SCREEN;
 	cout << "Sbagliato! Hai perso una vita :D\n\n";
 	vite--;
 		
