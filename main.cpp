@@ -42,7 +42,7 @@ int main(){
 			
 			{
 				cerr << "\n\nInserisci 1 o 2: ";
-				cin.ignore();
+				cin.clear();
 				scelta = cin.get();
 			}
 			
@@ -50,6 +50,7 @@ int main(){
 			
 			{
 				cout << "\n\nInserisci una lettera: ";
+				cin.ignore();
 				lettera = cin.get();
 				lettera = tolower(lettera);
 				count = -1;
